@@ -3,8 +3,13 @@
 module Homework3
   module CoreExtensions
     module InjectableArray
-      # put your code here
-      # def simple_inject(...
+      def simple_inject(value = nil)
+        value = '' if value.nil? && any?
+        each do |num|
+          value = yield value, num
+        end
+        value
+      end
     end
   end
 end
