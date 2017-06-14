@@ -2,8 +2,8 @@
 
 module Homework3
   module Extender
-    def self.call(_object, _interface)
-      # put your code here
+    def self.call(object, interface)
+      object.class.send(:include, interface)
     end
   end
 end
